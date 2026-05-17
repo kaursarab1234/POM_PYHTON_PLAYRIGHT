@@ -3,7 +3,8 @@ from playwright.sync_api import Page,expect
 class Homepage:
     def __init__(self,page:Page):
         self.searchbtn=page.get_by_test_id("nav-search-submit-button")
-       
+        self.accountandlistbutton=page.get_by_text("Account & Lists")
+  
 
 
     def visiblitiyofsearchbar(self):
@@ -11,6 +12,8 @@ class Homepage:
 
     def accountandvisibility(self):
         expect(self.accountandlist).to_be_visible()
+    def accountandlistclick(self):
+        self.accountandlistbutton.click()    
     def entersearchtest(self,product):
         self.searchbox.wait_for(State='visible')
         self.searchbox.fill(product)

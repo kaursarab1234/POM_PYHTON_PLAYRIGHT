@@ -1,6 +1,7 @@
 import pytest
 
 from pages.home import Homepage
+from pages.login import loginpage
 from pages.result import resultPage
 
 
@@ -15,4 +16,7 @@ def  resultPageobj(page):
 @pytest.fixture
 def laucnhingpage(page):  
     page.goto("https://amazon.in/")
-       
+@pytest.fixture
+def loginpageobj(page):
+    loginpageobj=loginpage(page)
+    return loginpageobj
