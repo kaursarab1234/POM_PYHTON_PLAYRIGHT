@@ -15,7 +15,7 @@ def test_example(page: Page,Homepageobj,loginpageobj) -> None:
     loginpageobj.enteremail(data["positivecrdentials"]["username"])
     loginpageobj.clickcontinue()
     loginpageobj.enterpassword(data["positivecrdentials"]["password"])
-    loginpageobj.clicksignin()
+    loginpageobj.clicksignin();
   
    
     expect(page.get_by_role("searchbox", name="Search Amazon.in")).to_be_visible()
