@@ -1,4 +1,5 @@
 import json
+import os
 import re
 from playwright.sync_api import Page, expect
 
@@ -19,5 +20,7 @@ def test_example(page: Page,Homepageobj,loginpageobj) -> None:
   
    
     expect(page.get_by_role("searchbox", name="Search Amazon.in")).to_be_visible()
+
+    print(os.getenv("USname"))
 
 
